@@ -1,17 +1,28 @@
 <div class="row d-flex align-content-center justify-content-center mt-5">
 	<div class="col-sm-12">
-		<label name="Status">Status</label>
-		<input type="radio" name="status" value="true"/> On
-		<input type="radio" name="status" value="false"/> Off
-		<p id="result"></p>
+		<div class="form-group">
+			<label name="Status">Status</label>
+			<div class="form-check">
+			  <input class="form-check-input" type="radio" name="status" id="status-true" value="true">
+			  <label class="form-check-label" for="status-true">
+			    On
+			  </label>
+			</div>
+			<div class="form-check">
+			  <input class="form-check-input" type="radio" name="status" id="status-false" value="false">
+			  <label class="form-check-label" for="status-false">
+			    Off
+			  </label>
+			</div>
+		</div>
 <!-- 
 		<label name="Brightness" for="myRange">Brightness</label>
 		<div class="slidecontainer">
 		  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
 		</div> -->
+		<button id="test" class="btn btn-primary">Test Now !</button>
 	</div>
 </div>
-<button id="test">Test Now !</button>
 
 <script type="text/javascript">
 	$('#test').click(function () {
