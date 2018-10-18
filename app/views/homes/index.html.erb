@@ -1,0 +1,42 @@
+<div class="row d-flex align-content-center justify-content-center mt-5">
+	<div class="col-sm-12">
+		<label name="Status">Status</label>
+		<input type="radio" name="status" value="true"/> On
+		<input type="radio" name="status" value="false"/> Off
+		<p id="result"></p>
+<!-- 
+		<label name="Brightness" for="myRange">Brightness</label>
+		<div class="slidecontainer">
+		  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+		</div> -->
+	</div>
+</div>
+<button id="test">Test Now !</button>
+
+<script type="text/javascript">
+	$('#test').click(function () {
+		// window.location.href = '/test';
+
+		var status;
+		if ($("input[name='status']:checked").val() == "true") {
+			status = true;
+		} else {
+			status = false;
+		}
+
+		var datas = {
+			on: status,
+		}
+
+		$.ajax({
+		  type: "put",
+		  url: "http://192.168.0.101/api/zoG5NHui7WTIgaJQUkEDl51Rl1xTqYHhyy8wtKVV/lights/1/state",
+      contentType: 'application/json',
+		  data: JSON.stringify(datas),
+		  success: function (data, textStatus, jqXHR) {
+		  	// $('#result').text(data);
+		  	console.log(data);
+		  },
+		});
+	});
+</script>
