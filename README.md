@@ -6,5 +6,5 @@ Technical Requirements:
 3. Posgresql 9.6.x
 
 Idea for OOP (have not done) :
-to put all parameters into model, example: status (on / off), sat, bri, and hue
-use 'generate' function in model to call the api and pass all parameters to api
+1. to put all parameters into model, example: status (on / off), sat, bri, and hue
+2. use 'generate' function in model to call the api and pass all parameters to api
