@@ -3,13 +3,7 @@ class HomesController < ApplicationController
 	end
 
 	def test
-		@clip = Clip.new
-		# @clip.status = params['status']
-		# @clip.sat = params['sat']
-		# @clip.bri = params['bri']
-		# @clip.hue = params['hue']
-		# @clip.generate
-		# p @clip
-		redirect_to root_path
+		Light.find(1).put(:state, :on => params['status'] == 'true')
+		# , :sat => params['sat'], :bri => params['bri'], :hue => params['hue']
 	end
 end

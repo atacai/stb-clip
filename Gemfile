@@ -41,6 +41,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+# Connects business objects and REST web services
+gem 'activeresource'
+
 # A gem to automate using jQuery with Rails
 gem 'jquery-rails'
 
