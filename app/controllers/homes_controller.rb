@@ -3,7 +3,6 @@ class HomesController < ApplicationController
 	end
 
 	def test
-		Light.find(1).put(:state, :on => params['status'] == 'true')
-		# , :sat => params['sat'], :bri => params['bri'], :hue => params['hue']
+		Light.find(params['id'].to_i).put(:state, :on => params['status'] == 'true', :sat => params['sat'].to_i, :bri => params['bri'].to_i, :hue => params['hue'].to_i)
 	end
 end

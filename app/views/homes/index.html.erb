@@ -1,54 +1,44 @@
-<div class="row d-flex align-content-center justify-content-center mt-5">
-	<div class="col-sm-12">
-		<div class="form-group">
-			<label name="Status">Status</label>
-			<div class="form-check">
-			  <input class="form-check-input" type="radio" name="status" id="status-true" value="true">
-			  <label class="form-check-label" for="status-true">
-			    On
-			  </label>
-			</div>
-			<div class="form-check">
-			  <input class="form-check-input" type="radio" name="status" id="status-false" value="false">
-			  <label class="form-check-label" for="status-false">
-			    Off
-			  </label>
-			</div>
-		</div>
-<!-- 
-		<label name="Brightness" for="myRange">Brightness</label>
-		<div class="slidecontainer">
-		  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-		</div> -->
-		<button id="test" class="btn btn-primary">Test Now !</button>
+<h2>Light Controls</h2>
+<div class="row form-group">
+	<label for="light-id" class="col-sm-2 col-form-label">Light ID</label>
+	<div class="col-sm-2">
+		<input type="text" class="form-control" id="light-id" name="light-id" value="1"/>
 	</div>
 </div>
-
-<script type="text/javascript">
-	$('#test').click(function () {
-		var status = $('input[name="status"]:checked').val();
-
-		$.ajax({
-		  type: 'get',
-		  url: '/test',
-		  data: 'status=' + status,
-		  success: function (data, textStatus, jqXHR) {
-		  },
-		});
-
-		// var datas = {
-		// 	on: ($('input[name="status"]:checked').val() == 'true'),
-		// }
-
-		// $.ajax({
-		//   type: 'put',
-		//   url: 'http://192.168.0.101/api/zoG5NHui7WTIgaJQUkEDl51Rl1xTqYHhyy8wtKVV/lights/1/state',
-  //     contentType: 'application/json',
-		//   data: JSON.stringify(datas),
-		//   success: function (data, textStatus, jqXHR) {
-		//   	// $('#result').text(data);
-		//   	console.log(data);
-		//   },
-		// });
-	});
-</script>
+<div class="row form-group">
+	<label for="chk-status" class="col-sm-2 col-form-label">Status</label>
+	<div class="col-sm-2">
+		<label class="switch">
+		  <input type="checkbox" id="chk-status" name="chk-status"/>
+		  <span class="switch-slider round"></span>
+		</label>
+	</div>
+</div>
+<div class="row form-group">
+	<label for="range-sat" class="col-sm-2 col-form-label">Saturation</label>
+	<div class="col-sm-8">
+		<div class="slider-bar-container mt-1">
+		  <input type="range" min="0" max="254" value="0" class="slider-bar" id="range-sat" name="range-sat" disabled>
+		  <span id="range-sat-value" class="small range-value disabled">0</span>
+		</div>
+	</div>
+</div>
+<div class="row form-group">
+	<label for="range-bri" class="col-sm-2 col-form-label">Brightness</label>
+	<div class="col-sm-8">
+		<div class="slider-bar-container mt-1">
+		  <input type="range" min="0" max="254" value="0" class="slider-bar" id="range-bri" name="range-bri" disabled>
+		  <span id="range-bri-value" class="small range-value disabled">0</span>
+		</div>
+	</div>
+</div>
+<div class="row form-group">
+	<label for="range-hue" class="col-sm-2 col-form-label">Hue</label>
+	<div class="col-sm-8">
+		<div class="slider-bar-container mt-1">
+		  <input type="range" min="0" max="10000" value="0" class="slider-bar" id="range-hue" name="range-hue" disabled>
+		  <span id="range-hue-value" class="small range-value disabled">0</span>
+		</div>
+	</div>
+</div>
+<button id="test" class="btn btn-primary">Test Now !</button>
